@@ -1,0 +1,27 @@
+{
+  "id": "/#/",
+  "start_url": "/#/",
+  "scope": "/",
+  "name": "Story App",
+  "short_name": "StoryApp",
+  "description": "Aplikasi berbagi cerita dengan fitur lokasi dan cerita.",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3f51b5",
+  "icons": [
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/homepage.png",
+      "sizes": "1842x912",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ]
+}

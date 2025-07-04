@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Story App</title>
+
+  <!-- Tambah Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./styles/styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="manifest" href="app.webmanifest" />
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <script>
+    if (!document.startViewTransition) {
+      document.startViewTransition = (cb) => {
+        cb();
+        return Promise.resolve();
+      };
+    }
+  </script>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <header>
+    <a href="javascript:void(0)" class="skip-link">Lewati ke konten utama</a>
+
+    <div class="header-container">
+      <h1 class="site-title">Story App</h1>
+
+      <button id="menu-toggle" class="hamburger" aria-label="Navigasi halaman">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="main-nav" class="nav-links">
+        <a href="#/stories">Daftar Titik</a>
+
+        <a href="#/add" class="flex items-center gap-2 px-3 py-2 bg-orange-500 text-white rounded hover:bg-orange-600 transition" style="color: white;">
+           Tambah <i class="fa-solid fa-plus"></i>
+        </a>
+
+        <a href="#/login">Masuk</a>
+        <a href="#/register">Daftar</a>
+
+        <button id="nav-logout" class="logout-button flex items-center gap-2 text-red-600 hover:underline">
+           Keluar <i class="fa-solid fa-right-from-bracket"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" tabindex="-1"></main>
+
+  <footer id="site-footer">
+    <div class="max-w-5xl mx-auto text-center py-4">
+      <p>Story App &copy; Miftah</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const nav = document.getElementById('main-nav');
+
+    toggleBtn.addEventListener('click', () => {
+      nav.classList.toggle('show');
+    });
+
+    document.querySelectorAll('#main-nav a, #main-nav button').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 640) {
+          nav.classList.remove('show');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

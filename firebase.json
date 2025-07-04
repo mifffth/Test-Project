@@ -1,0 +1,22 @@
+{
+  "emulators": 
+  {
+    "apphosting": {
+      "port": 9000,
+      "rootDirectory": "./",
+      "startCommand": "npm run start-dev"
+    },
+    "ui": {
+      "enabled": true,
+      "port": 9000
+    },
+    "singleProjectMode": true
+  },
+  "firestore": 
+  {
+    "database": "(default)",
+    "location": "asia-southeast2",
+    "rules": "firestore.rules",
+    "indexes": "index.js"
+  }
+}
